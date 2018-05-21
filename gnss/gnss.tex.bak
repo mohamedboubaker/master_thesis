@@ -1,0 +1,7 @@
+\chapter{Global navigation satellite systems}
+	
+	% Section 1 describes gnss 
+	\input{./gnss/gnss_principles/gnss_principles}
+	
+	% Section 2 describes the spreading codes uses by the galileo system.
+	\input{./gnss/galileo_spreading_codes/galileo_spreading_codes}

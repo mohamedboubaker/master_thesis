@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}Global navigation satellite systems}{3}
+\contentsline {section}{\numberline {1.1}GNSS principles}{3}
+\contentsline {section}{\numberline {1.2}Galileo spreading codes}{3}
+\contentsline {chapter}{\numberline {2}Authentication protocols}{6}
+\contentsline {section}{\numberline {2.1}System model}{6}
+\contentsline {section}{\numberline {2.2}Artificial noise at symbol level}{7}

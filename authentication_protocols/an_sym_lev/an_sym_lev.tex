@@ -1,0 +1,21 @@
+% This section describes the technique of puting noise on symbol level before spreading.
+\section{Artificial noise at symbol level}
+In the following section we describe an authentication protocol for the navigation signals based on the addition of an authentication signal corrupted by artificial noise at symbol level to the navigation signal. Adding AN at symbol level means adding noise on top of the symbols of the authentication message before spreading them. 
+
+
+Each satellite generates an authentication message $V_i$. This message is encoded and modulated and $x_{ij}$ denotes the modulated symbols. Artificial noise $\omega_{ij}^*$ is then added to each authentication symbol. Then both are spread using a spreading pulse $r_{A,i}(t)$ orthogonal to all navigation spreading pulses $r_i(t)$. The authentication signal could be written as
+\begin{equation}
+z_i(t)=\sum_{j=-\infty}^{+\infty}(x_{ij}+\omega_{ij}^*)r_{A,i}(t-jT_s),
+\end{equation}
+where
+\begin{equation}
+r_{A,i}(t)=\sum_{k=0}^{N_c-1}c_{A,ik}u(t-kT_c)
+\end{equation}
+is the pulse used to spread the authentication signal of satellite $i$ where $c_{A,ik}=\pm 1$.
+
+Every satellite superimposes synchronously this authentication signal $z_i(t)$ to it's data signal $p_i(t)$. So the final transmitted signal from each satellite could be written as
+\begin{equation}
+s_i(t) = p_i(t) + z_i(t).
+\end{equation}
+Bob saves all of the received authentication symbols. Then through the authenticated channel the ground segment reveals to all users the authentication messages $V_i$ and the artificial noise $\omega_{ij}^*$ that was added. Bob checks the authenticity by removing the artificial noise from the saved received symbols and extracting the authentication messages $V_i$ and comparing them to those revealed to him by the ground segment.
+where 

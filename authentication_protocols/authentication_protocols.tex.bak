@@ -1,0 +1,8 @@
+\chapter{Authentication protocols}
+
+%Section 1 
+\input{./authentication_protocols/system_model/system_model}
+
+% Section 2 Artificial noise on symbol level
+\input{./authentication_protocols/an_sym_lev/an_sym_lev}
+% Section 2 Artifical noise on symbol level with second level artifical noise

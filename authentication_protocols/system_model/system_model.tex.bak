@@ -1,0 +1,32 @@
+\section{System model}
+Our system model consists of $N_B$ satellites, a receiver and a spoofer. Where $N_B$ denotes the number of visible satellites to the receiver. The satellites provide timing and positioning services by continuously broadcasting navigation signals to the users. The receiver must have in view at least four different satellites in order to successfully calculate it's space and time coordinates.  The spoofer aims to mislead the receiver by transmitting to it false navigation signals. We assume that the spoofer has high-end receiving equipment enabling it to receive navigation signals with high SNR.
+
+From now on we will refer to the receiver by the name Bob, and to the spoofer by the name Eve. The model comprises different communication channels. First off, the wireless navigation channels though which the satellites broadcast their signals $s_i(t)$ to Bob. Since the distances separating Bob from each satellite are different, Bob receives the superposition of these signals with random delays $\delta_i$. Next, the attack channel through which propagates the spoofing signal $s_E(t)$ transmitted by Eve to mislead Bob. Finally, An authenticated channel that connects the users including Eve to the ground segment. We assume that this channel has high bandwidth and that Eve cannot interfere with it. For example it could be a secure Internet connection.
+ In an additive white Gaussian noise channel the received signals by Bob and Eve could be written as
+\begin{equation}
+r_B(t)=\sum_{i=1}^{N_B}s_i(t-\delta_i)+s_E(t)+\omega_B(t)
+\end{equation}
+
+\begin{equation}
+r_E(t)=\sum_{i=1}^{N_E}s_i(t-\mu_i)+\omega_E(t),
+\end{equation}
+
+where $\omega_B(t)$ and $ \omega_E(t)$ are the zero mean AWGN signals that model the effects of thermal noise and interfering signals with power $\sigma_{\omega_B}^2$ and $\sigma_{\omega_E}^2$, respectively. $N_E$ is the number of satellites visible to Eve. $\delta_i$ and $\mu_i$ are the  propagation delays from satellite $i$ to Bob and Eve, respectively.
+
+We delimit our model to the Galileo E1 band which is composed of two signals, data and pilot. We focus on the data signal $p_i(t)$ carrying the unitary power data stream $d_{ij} $ with period $T_s$ which could be written as
+\begin{equation}
+p_i(t)=\sum_{j=-\infty}^{+\infty}d_{ij}r_i(t-jT_s),
+\end{equation}
+where 
+\begin{equation}
+r_i(t)=\sum_{k=0}^{N_c-1}c_{ik}u(t-kT_c)
+\end{equation}
+is the pulse used to spread navigation data of satellite $i$ with chip period $T_c = T_s/N_c$ where $N_c$ is the spreading factor, $c_{ik}=\pm 1$ and $u(t)$ is the chip pulse and can be written as
+\begin{equation}
+ u(t) = \left\{
+     \begin{array}{lr}
+       1, &  0 \leqslant t \leqslant T_c\\
+       0 &  otherwise. \\
+     \end{array}
+   \right.
+\end{equation}
